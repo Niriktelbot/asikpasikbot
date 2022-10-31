@@ -24,8 +24,8 @@ bot = Bot(TOKEN, parse_mode=types.ParseMode.HTML)
 dp = Dispatcher(bot, storage=MemoryStorage())
 adminid = "5198364323" #админ ид
 link = "gg_ad_bot" # юзернейм бота, пример – freegoldsbot (писать без @ и без https://t.me просто юзернейм)
-error = "-1001503792186" # канал с фейк ошибками в работе бота
-viplat = "-1001724841698" # канал с фейк выплатами
+error = "@news_botov" # канал с фейк ошибками в работе бота
+viplat = "@payments_bota" # канал с фейк выплатами
 async def anti_flood(*args, **kwargs):
     m = args[0]
     await m.answer("Не флуди! Попробуй через 3 секунды!")
@@ -200,7 +200,7 @@ async def get_message(message):
 async def join(call: types.CallbackQuery):
         await bot.edit_message_text(chat_id=call.message.chat.id,
         message_id=call.message.message_id,
-        text = f"Ваша реферальная ссылка: "+'https://t.me/{link}?start='+str(call.message.chat.id), parse_mode='HTML')
+        text = f"Ваша реферальная ссылка: "+'https://t.me/gg_ad_bot?start='+str(call.message.chat.id), parse_mode='HTML')
 if __name__ == '__main__':
  executor.start_polling(dp)
     
