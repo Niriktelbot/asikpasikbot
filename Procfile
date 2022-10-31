@@ -1,0 +1,6 @@
+bot: python main.py
+
+
+
+
+
